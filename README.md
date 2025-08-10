@@ -25,3 +25,7 @@ cd delegated-authority-revocation-system
 # add contracts/ below, then:
 forge build
 forge test
+
+## License
+This project is licensed under the [GNU Affero General Public License v3.0](LICENSE).  
+© 2025 TomateDM. All rights reserved under this license.
