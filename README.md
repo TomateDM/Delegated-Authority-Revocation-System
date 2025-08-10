@@ -3,7 +3,7 @@
 **TL;DR**: Users assign agents on-chain; a designated **Revocation Guardian** can **only revoke** those delegations (never assign), per domain (finance, voting, civic, defence, etc.). This preserves user autonomy with an audited emergency failsafe. :contentReference[oaicite:2]{index=2}
 
 ## Why
-Typical on-chain delegation lets the user revoke—unless the user’s key is lost/compromised. ROD adds a constrained, auditable **revocation-only** key held by a trusted institution (“Guardian”), solving the “user can’t revoke” failure mode without letting any third party assign agents. :contentReference[oaicite:3]{index=3}
+Typical on-chain delegation lets the user revoke-unless the user’s key is lost/compromised. DARS adds a constrained, auditable **revocation-only** key held by a trusted institution (“Guardian”), solving the “user can’t revoke” failure mode without letting any third party assign agents. :contentReference[oaicite:3]{index=3}
 
 ## Design (high level)
 - **Ledger-stored state**: `principal -> domain -> agent -> status/limits`. Queryable and auditable. :contentReference[oaicite:4]{index=4}  
@@ -14,14 +14,14 @@ Typical on-chain delegation lets the user revoke—unless the user’s key is lo
 - **(Optional) Permission Packs & autonomy levels** for AI agents (scoped data/actions + expiry; advisory→proactive). :contentReference[oaicite:7]{index=7}
 
 ## Contracts
-- `AgentRegistry.sol` — core mapping, events, `assignAgent`, `revokeAgent`, `isAuthorized`.
-- `PermissionPacks.sol` (optional) — minimal pack registry (hashes + expiry + status).
+- `AgentRegistry.sol` - core mapping, events, `assignAgent`, `revokeAgent`, `isAuthorized`.
+- `PermissionPacks.sol` (optional) - minimal pack registry (hashes + expiry + status).
 
 ## Quickstart
 ```bash
 # with Foundry
-forge init revocation-only-delegation
-cd revocation-only-delegation
+forge init delegated-authority-revocation-system
+cd delegated-authority-revocation-system
 # add contracts/ below, then:
 forge build
 forge test
