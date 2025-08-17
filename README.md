@@ -1,4 +1,4 @@
-# Delegated Authority Revocation System (DARS)
+# DARS - Delegated Authority Revocation System 
 
 **TL;DR**: Users assign agents on-chain; a designated **Revocation Guardian** can **only revoke** those delegations (never assign), per domain (finance, voting, civic, defence, etc.). This preserves user autonomy with an audited emergency failsafe.
 
